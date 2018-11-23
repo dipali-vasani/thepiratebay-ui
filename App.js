@@ -37,11 +37,8 @@ export default class App extends React.Component {
                           <Right />
                       </Header>
                       <Content>
-                          <Text>
-                              This is Content Section
-                          </Text>
+                        <Test />
                       </Content>
-                      <Test />
                       <Footer>
                           <FooterTab>
                               <Button full>
