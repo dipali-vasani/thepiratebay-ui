@@ -19,16 +19,17 @@ export default class App extends React.Component {
         console.log(error);
         alert(error.message);
       },
-      // { enableHighAccuracy: false, timeout: 20000, maximumAge: 1000 },
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
     );
-    // this.watchID = navigator.geolocation.watchPosition(
-    //   (position) => {
-    //     console.log("Component last position", position);
-    //     const lastPosition = JSON.stringify(position);
-    //     this.setState({ lastPosition });
-    //   },
-    //   (error) => alert(error.message) 
-    // );
+    this.watchID = navigator.geolocation.watchPosition(
+      (position) => {
+        console.log("Component last position", position);
+        const lastPosition = JSON.stringify(position);
+        this.setState({ lastPosition });
+      },
+      (error) => alert(error.message),
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+    );
   }
   componentWillUnmount = () => {
     // navigator.geolocation.clearWatch(this.watchID);
